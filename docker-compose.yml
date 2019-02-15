@@ -30,6 +30,7 @@ services:
       networkname:
         aliases:
           - back
+  # Configurar o Banco quando o front e back end estiverem ok so tirar comentario        
   # db:
   #   image: mongo
   #   ports:
