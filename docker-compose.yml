@@ -1,0 +1,39 @@
+version: '2'
+services:
+  front:
+    image: clientfront
+    working_dir: /app/teste
+    # build: Front
+    # command: ng new
+    command: sh -c 'while true ;do wait ;done' #// Mantem ele como zumbi ligado sem fazer nada
+    # Desligar o comando acima depois de gerar o projeto e executar o abaixo
+    # command: ng serve --host 0.0.0.0 #..// Quando o projeto ja esta criado
+    ports:
+    - '4200:4200'
+    volumes:
+    - ./Front:/app
+    networks:
+      networkname:
+        aliases:
+          - front
+  back:
+    image: serverback
+    working_dir: /app/
+    # build: Back
+    # command: npm start // depois que o projeto estiver pronto
+    command: sh -c 'while true ;do wait ;done' #// Mantem ele como zumbi ligado sem fazer nada
+    ports:
+    - '3000:3000'
+    volumes:
+    - ./Back:/app
+    networks:
+      networkname:
+        aliases:
+          - back
+  # db:
+  #   image: mongo
+  #   ports:
+  #   - '27017:27017'
+  #   restart: always
+networks:
+  networkname: #// Com a rede criada nao precisamos fazer link entre os containers
