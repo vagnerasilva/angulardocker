@@ -4,10 +4,10 @@ services:
     image: clientfront
     working_dir: /app/teste
     # build: Front
-    # command: ng new
-    command: sh -c 'while true ;do wait ;done' #// Mantem ele como zumbi ligado sem fazer nada
+    # command: ng new nomeprojeto
+    # command: sh -c 'while true ;do wait ;done' #// Mantem ele como zumbi ligado sem fazer nada
     # Desligar o comando acima depois de gerar o projeto e executar o abaixo
-    # command: ng serve --host 0.0.0.0 #..// Quando o projeto ja esta criado
+    command: ng serve --host 0.0.0.0 #..// Quando o projeto ja esta criado
     ports:
     - '4200:4200'
     volumes:
